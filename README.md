@@ -135,7 +135,7 @@ terraform destroy
 
 ## Cost notes
 
-(Fill in with your own Billing check. Spend data can lag up to 24 hours.)
+
 
 - Observed cost for my test run: $0.00 as of Nov 14, 2026 (Billing home, month-to-date; spend data can lag up to 24 hours).
 - How I checked: Billing home month-to-date spend.
