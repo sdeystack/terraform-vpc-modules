@@ -137,8 +137,8 @@ terraform destroy
 
 (Fill in with your own Billing check. Spend data can lag up to 24 hours.)
 
-- Observed cost for my test run: $__. __ as of ____ (Billing home, month-to-date).
-- How I checked:
+- Observed cost for my test run: $0.00 as of Nov 14, 2026 (Billing home, month-to-date; spend data can lag up to 24 hours).
+- How I checked: Billing home month-to-date spend.
 - Expected shape: the NAT gateway and the load balancer charge by the hour, so a short session costs cents; the t3.micro is free-tier eligible on a new account. Leaving the NAT gateway running overnight is the expensive mistake this project teaches you to avoid.
 
 ## Trade-offs and what I learned
