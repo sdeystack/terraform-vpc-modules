@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local backend config (names your bucket; keep backend.hcl.example in git)
+backend.hcl
+
+# Python / OS
+__pycache__/
+.DS_Store

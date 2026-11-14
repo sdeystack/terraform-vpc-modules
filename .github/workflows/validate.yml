@@ -1,0 +1,51 @@
+# Tests only: formatting + validation. No deploys, no AWS credentials needed.
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  terraform:
+    name: fmt + validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.8"
+
+      - name: Check formatting
+        run: terraform fmt -check -recursive
+
+      - name: Validate bootstrap
+        run: |
+          cd bootstrap
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate VPC module
+        run: |
+          cd modules/vpc
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate compute module
+        run: |
+          cd modules/compute
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate dev environment
+        run: |
+          cd envs/dev
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate prod environment (skeleton)
+        run: |
+          cd envs/prod
+          terraform init -backend=false
+          terraform validate

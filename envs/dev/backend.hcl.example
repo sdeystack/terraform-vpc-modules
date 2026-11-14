@@ -1,0 +1,9 @@
+# Copy this file to backend.hcl and fill in the two names from the
+# bootstrap step (`terraform output` in the bootstrap/ folder).
+# backend.hcl is gitignored: it names your account's bucket, and it is
+# environment-specific. This file holds names only, no keys or secrets.
+bucket         = "REPLACE-WITH-STATE-BUCKET-NAME"
+key            = "dev/terraform.tfstate"
+region         = "us-east-1"
+dynamodb_table = "REPLACE-WITH-LOCK-TABLE-NAME"
+encrypt        = true
